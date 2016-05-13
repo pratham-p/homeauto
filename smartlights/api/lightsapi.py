@@ -3,7 +3,7 @@
 #from flask import Blueprint
 from flask import request
 from flask_restful import Resource, reqparse
-import subprocess, time
+import subprocess, time, os
 
 '''
 lightsapi = Blueprint(
@@ -17,7 +17,8 @@ lightsapi = Blueprint(
 
 
 #codeSendPath = "/home/pi/Prathmesh/Learning/Python-Flask/First_RestApi/smartlights/codesend"
-codeSendPath = "smartlights/smartlights/codesend"
+#codeSendPath = os.path.join(os.path.abspath(os.curdir), "smarthome/smartlights")
+codeSendPath = "/var/www/homeauto/smarthome/smartlights/codesend"
 codeSendPin = "0"
 codeSendPulseLength = "189"
 

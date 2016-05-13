@@ -1,8 +1,8 @@
 from flask import Flask
-from smartlights.app.lightsapp import lightsapp
+from smartlights.app.lightsapp import lights
 
 app = Flask(__name__)
-app.register_blueprint(lightsapp)
+app.register_blueprint(lights)
 
 from flask_restful import Api
 from smartlights.api.lightsapi import LightList, Light
