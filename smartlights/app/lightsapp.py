@@ -3,8 +3,8 @@
 #from flask import Flask, render_template
 from flask import Blueprint, render_template
 
-lightsapp = Blueprint(
-        'lightsapp',
+lights = Blueprint(
+        'lights',
         __name__,
         template_folder='templates',
         static_folder='static',
@@ -13,11 +13,11 @@ lightsapp = Blueprint(
 
 #app = Flask(__name__)
 
-@lightsapp.route('/')
+@lights.route('/')
 def home():
     return render_template('home.html')
 
-@lightsapp.route('/about/')
+@lights.route('/about/')
 def about():
     return render_template('about.html')
 
