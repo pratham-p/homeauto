@@ -15,8 +15,6 @@ lightsapi = Blueprint(
 #app = Flask(__name__)
 #api = Api(app)
 
-
-#codeSendPath = "/home/pi/Prathmesh/Learning/Python-Flask/First_RestApi/smartlights/codesend"
 #codeSendPath = os.path.join(os.path.abspath(os.curdir), "smarthome/smartlights")
 codeSendPath = "/var/www/homeauto/smarthome/smartlights/codesend"
 codeSendPin = "0"
