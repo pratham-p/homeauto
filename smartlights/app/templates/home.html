@@ -1,74 +1,113 @@
 ﻿<!DOCTYPE html>
 <html>
 <body>
-    {% extends "layout.html" %}
-    {% block content %}
-    <label>All</label>
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" data-outletid="All" data-outletstatus="on" class="btn btn-default toggleOutlet">On</button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" data-outletid="All" data-outletstatus="off" class="btn btn-default toggleOutlet">Off</button>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <label>1</label>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="1" data-outletstatus="on" class="btn btn-default toggleOutlet">On</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="1" data-outletstatus="off" class="btn btn-default toggleOutlet">Off</button>
-            </div>
-        </div>
-    </div>
-    <div class="hidden">
-        <label>2</label>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="2" data-outletstatus="on" class="btn btn-default toggleOutlet">On</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="2" data-outletstatus="off" class="btn btn-default toggleOutlet">Off</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="hidden">
-        <label>3</label>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="3" data-outletstatus="on" class="btn btn-default toggleOutlet">On</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="3" data-outletstatus="off" class="btn btn-default toggleOutlet">Off</button>
-            </div>
-        </div>
-    </div>
-    <div>
-        <label>Living Room</label>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="livingRoom" data-outletstatus="on" class="btn btn-default toggleOutlet">On</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="livingRoom" data-outletstatus="off" class="btn btn-default toggleOutlet">Off</button>
-            </div>
-        </div>
-    </div>
-    <div>
-        <label>Bed Room</label>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="bedRoom" data-outletstatus="on" class="btn btn-default toggleOutlet">On</button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" data-outletid="bedRoom" data-outletstatus="off" class="btn btn-default toggleOutlet">Off</button>
-            </div>
-        </div>
-    </div>
-    {% endblock %}
+	{% extends "layout.html" %}
+	{% block content %}
+	<div>	
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>All</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" data-outletid="All" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="All" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>
+		</div>
+	</div>	
+	<div class="hidden">	
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>1</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" data-outletid="1" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="1" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>
+		</div>
+	</div>
+	<div class="hidden">
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>2</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" data-outletid="2" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="2" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>
+		</div>
+	</div>
+	<div class="hidden">	
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>3</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" data-outletid="3" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="3" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>
+		</div>
+	</div>
+	<div class="hidden">
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>4</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" data-outletid="4" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="4" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>Living Room</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6"> 
+				<button type="button" data-outletid="livingRoom" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="livingRoom" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3><label>Bed Room</label></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<button type="button" data-outletid="bedRoom" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+			</div>
+			<div class="col-xs-6">
+				<button type="button" data-outletid="bedRoom" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			</div>		
+		</div>
+	</div>
+	{% endblock %}
 </body>
 </html>
