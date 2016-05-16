@@ -77,13 +77,13 @@ class Light(Resource):
 			if light['lightId'] == lightId:
 				lightsList.remove(light)
 				isDeleted = True
-			break
+				break
 
 		#light = [light for light in jsonList if light['lightId'] == lightId]
 		if isDeleted == True:
-			return 200
+			return lightId + " deleted.", 200
 		else:
-			return 404
+			return "Light not deleted.", 404
 
 	def put(self, lightId, action):
 
