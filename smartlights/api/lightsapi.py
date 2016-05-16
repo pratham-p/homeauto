@@ -23,6 +23,7 @@ codeSendPulseLength = "189"
 lightsList = [
 	{
 		"lightId": "livingRoom",
+		"name": "Living Room",
 		"codes": {
            "on": 1334531,
            "off": 1334540
@@ -30,6 +31,7 @@ lightsList = [
 	},
 	{
 		"lightId": "bedRoom",
+		"name": "Bed Room",
 		"codes": {
            "on": 1340675,
            "off": 1340684
@@ -42,11 +44,12 @@ class LightList(Resource):
 	def __init__(self):
 		self.parser = reqparse.RequestParser()
 		self.parser.add_argument('lightId', required=True, help="lightId is required!", location="json")
+		self.parser.add_argument('name', required=True, help="name is required!", location="json")
 		self.parser.add_argument('codes', required=True, location="json")
 		super(LightList, self).__init__()
 
 	def get(self):
-		return {"lights": lightsList}
+		return {"lights": lightsList}, 200
 
 	def post(self):
 		args = self.parser.parse_args()
@@ -54,6 +57,7 @@ class LightList(Resource):
 
 		light = {
 			"lightId": args['lightId'],
+			"name": args['name'],
 			"codes": request.json['codes'] #args['codes']
 		}
 

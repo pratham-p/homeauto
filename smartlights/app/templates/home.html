@@ -3,110 +3,39 @@
 <body>
 	{% extends "layout.html" %}
 	{% block content %}
-	<div>	
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>All</label></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="button" data-outletid="All" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
-			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="All" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
-			</div>
-		</div>
-	</div>	
-	<div class="hidden">	
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>1</label></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="button" data-outletid="1" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
-			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="1" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
-			</div>
-		</div>
-	</div>
-	<div class="hidden">
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>2</label></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="button" data-outletid="2" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
-			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="2" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
-			</div>
-		</div>
-	</div>
-	<div class="hidden">	
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>3</label></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="button" data-outletid="3" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
-			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="3" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
-			</div>
-		</div>
-	</div>
-	<div class="hidden">
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>4</label></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="button" data-outletid="4" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
-			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="4" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
-			</div>
-		</div>
-	</div>
 	<div>
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>Living Room</label></h3>
+		<div>
+			<div class="row">
+				<div class="col-xs-12 text-left">
+					<h3><label>All</label></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<button type="button" data-outletid="All" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+				</div>
+				<div class="col-xs-6">
+					<button type="button" data-outletid="All" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-6"> 
-				<button type="button" data-outletid="livingRoom" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+		{% for light in lightsList %}
+		<div>
+			<div class="row">
+				<div class="col-xs-12 text-left">
+					<h3><label>{{ light['name'] }}</label></h3>
+				</div>
 			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="livingRoom" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+			<div class="row">
+				<div class="col-xs-6"> 
+					<button type="button" data-outletid="{{ light['lightId'] }}" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
+				</div>
+				<div class="col-xs-6">
+					<button type="button" data-outletid="{{ light['lightId'] }}" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div>
-		<div class="row">
-			<div class="col-xs-12 text-left">
-				<h3><label>Bed Room</label></h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6">
-				<button type="button" data-outletid="bedRoom" data-outletstatus="on" class="btn btn-lg btn-block btn-warning toggleOutlet mybutton">On</button>
-			</div>
-			<div class="col-xs-6">
-				<button type="button" data-outletid="bedRoom" data-outletstatus="off" class="btn btn-lg btn-block btn-info toggleOutlet mybutton">Off</button>
-			</div>		
-		</div>
+		{% endfor %}
 	</div>
 	{% endblock %}
 </body>

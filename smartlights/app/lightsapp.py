@@ -2,6 +2,8 @@
 
 #from flask import Flask, render_template
 from flask import Blueprint, render_template
+from smartlights.api.lightsapi import LightList
+import requests
 
 lights = Blueprint(
         'lights',
@@ -14,8 +16,14 @@ lights = Blueprint(
 #app = Flask(__name__)
 
 @lights.route('/')
+@lights.route('/home')
 def home():
-    return render_template('home.html')
+	lightsRequest = LightList()
+	response, code = lightsRequest.get()
+	if code == requests.codes.ok:
+		return render_template('home.html', lightsList = response['lights'])
+	else:
+		return render_template('home.html')
 
 @lights.route('/about/')
 def about():
