@@ -87,13 +87,13 @@ class Light(Resource):
 
 	def put(self, lightId, action):
 
-		if lightId == "All":
+		if lightId.lower() == "all":
 			for light in lightsList:
-				if action == "on":
+				if action.lower() == "on":
 					code = self.getLightCode(light, action)
 					self.triggerLightAction(code)
 					
-				elif action == "off":
+				elif action.lower() == "off":
 					code = self.getLightCode(light, action)
 					self.triggerLightAction(code)
 				else:
@@ -104,11 +104,11 @@ class Light(Resource):
 		  
 			light = self.findLight(lightId)
 
-			if action == "on":
+			if action.lower() == "on":
 				code = self.getLightCode(light, action)
 				self.triggerLightAction(code)
       
-			elif action == "off":
+			elif action.lower() == "off":
 				code = self.getLightCode(light, action)
 				self.triggerLightAction(code)
       
