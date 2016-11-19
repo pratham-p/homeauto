@@ -21,22 +21,31 @@ codeSendPin = "0"
 codeSendPulseLength = "189"
 
 lightsList = [
+        {
+		"lightId": "tubeLight",
+		"name": "Living Room (Tube light)",
+		"codes": {
+                           "on": 1332995,
+                           "off": 1333004
+		}
+	},
 	{
 		"lightId": "livingRoom",
-		"name": "Living Room",
+		"name": "Living Room (Lamp)",
 		"codes": {
-           "on": 1334531,
-           "off": 1334540
+                           "on": 1334531,
+                           "off": 1334540
 		}
 	},
 	{
 		"lightId": "bedRoom",
 		"name": "Bed Room",
 		"codes": {
-           "on": 1340675,
-           "off": 1340684
+                           "on": 1340675,
+                           "off": 1340684
 		}
 	}
+
 ]
 
 class LightList(Resource):
