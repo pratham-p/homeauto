@@ -54,7 +54,7 @@ class Ping(Resource):
                 super(Ping, self).__init__()
 
         def get(self):
-                return 200
+                return "OK", 200
 
 class LightList(Resource):
 
