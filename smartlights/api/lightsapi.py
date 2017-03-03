@@ -48,6 +48,14 @@ lightsList = [
 
 ]
 
+class Ping(Resource):
+
+        def __init__(self):
+                super(Ping, self).__init__()
+
+        def get(self):
+                return 200
+
 class LightList(Resource):
 
 	def __init__(self):
