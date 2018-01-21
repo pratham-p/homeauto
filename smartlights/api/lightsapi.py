@@ -23,15 +23,26 @@ codeSendPulseLength = "189"
 lightsList = [
         {
 		"lightId": "tubeLight",
-		"name": "Living Room (Tube light)",
+		"name": "Living Room",
+        "isvisible": "true",
 		"codes": {
                            "on": 1332995,
                            "off": 1333004
 		}
 	},
 	{
-		"lightId": "livingRoom",
-		"name": "Living Room (Lamp)",
+		"lightId": "officeLamp",
+		"name": "Office Lamp",
+        "isvisible": "true",
+		"codes": {
+                           "on": 1334531,
+                           "off": 1334540
+		}
+	},
+    {
+		"lightId": "entranceLight",
+		"name": "Entrance Light",
+        "isvisible": "false",
 		"codes": {
                            "on": 1334531,
                            "off": 1334540
@@ -40,6 +51,7 @@ lightsList = [
 	{
 		"lightId": "bedRoom",
 		"name": "Bed Room",
+        "isvisible": "true",
 		"codes": {
                            "on": 1340675,
                            "off": 1340684
@@ -66,7 +78,7 @@ class LightList(Resource):
 		super(LightList, self).__init__()
 
 	def get(self):
-		return {"lights": lightsList}, 200
+		return {"lights": [l for l in lightsList if l["isvisible"] == "true"]}, 200
 
 	def post(self):
 		args = self.parser.parse_args()
@@ -75,6 +87,7 @@ class LightList(Resource):
 		light = {
 			"lightId": args['lightId'],
 			"name": args['name'],
+            "isvisible": args['isvisible'],
 			"codes": request.json['codes'] #args['codes']
 		}
 
@@ -105,12 +118,14 @@ class Light(Resource):
 	def put(self, lightId, action):
 
 		if lightId.lower() == "all":
-			for light in lightsList:
-				if action.lower() == "on":
+			for light in [l for l in lightsList if l["isvisible"] == "true"]:
+				if action.lower() == "on": 
+					print(light)
 					code = self.getLightCode(light, action)
 					self.triggerLightAction(code)
 					
 				elif action.lower() == "off":
+					print(light)
 					code = self.getLightCode(light, action)
 					self.triggerLightAction(code)
 				else:
