@@ -25,14 +25,14 @@ A Python Flask-based API and Web app for smart home automation, hosted on Raspbe
 ## **Getting Started**
 
 1. **Clone the repository:**
-git clone https://github.com/yourusername/smart-home-server.git
-cd smart-home-server
+- git clone *this repository*
+- cd homeauto
 
-2. **Install dependencies:**
+3. **Install dependencies:**
 pip install -r requirements.txt
 
-3. **Connect the hardware:**
-- Wire the 433 MHz transmitter and receiver to your Raspberry Pi GPIO pins as described in the hardware section of the docs *<WIP>*.
+4. **Connect the hardware:**
+- Wire the 433 MHz transmitter and receiver to your Raspberry Pi GPIO pins as described in the hardware section of the docs *(TODO...)*.
 
 4. **Run the server:**
 python app.py
